@@ -57,6 +57,11 @@
         font-weight: normal;
       }
     }
+    p{
+      grid-column: 2;
+      grid-row: 2;
+      margin-top: 0;
+    }
   }
 }
 </style>
