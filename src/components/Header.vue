@@ -4,24 +4,50 @@
         <h1>let's share</h1>
         <p>精品博客汇集</p>
         <div class="buttons">
-          <el-button>登陆</el-button>
-          <el-button>注册</el-button>
+          <router-link to="/login"><el-button>立即登陆</el-button></router-link>
+          <router-link to="/register"><el-button>注册账号</el-button></router-link>
         </div>
       </template>
       <template v-if="isLogin">
         <h1>let's share</h1>
         <i class="edit el-icon-edit"></i>
-        <img class="avatar" src="https://secure.gravatar.com/avatar/ff4317f0f9be382a2bca6ac3aded778a?s=50&r=pg&d=https%3A%2F%2Fdeveloper.mozilla.org%2Fstatic%2Fimg%2Favatar.png">
+        <div class="user">
+          <img class="avatar" v-bind:src="user.avatar" v-bind:alt="user.username" v-bind:title="user.username">
+          <ul>
+            <li><router-link to="my">我的</router-link></li>
+            <li><a href="#" v-on:click = onLogout>注销</a></li>
+          </ul>
+        </div>
       </template>
   </header>
 </template>
 
 <script>
+import auth from '@/api/auth'
+import { mapGetters, mapActions} from 'vuex'
+
 export default {
   data () {
-    return {
-      isLogin: true,
-    }
+    return {}
+  },
+  
+  computed: {
+    ...mapGetters([
+      'isLogin',
+      'user'
+    ])
+  },
+  created() {
+    this.checkLogin()
+  },
+  methods: {
+    ...mapActions([
+      'checkLogin',
+      'logout'
+    ]),
+    onLogout(){
+      this.logout()
+    },
   }
 }
 </script>
@@ -46,7 +72,7 @@ header.no-login{
     color: #fff;
   }
   .buttons{
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }
 header.login{
@@ -69,8 +95,40 @@ header.login{
   .avatar{
     width: 40px;
     height: 40px;
+    border: 1px solid #fff;
     border-radius: 50%;
     margin-left: 15px;
+  }
+
+  .user{
+    position: relative;
+
+    ul{
+      display: none;
+      position: absolute;
+      right: 0;
+      list-style: none;
+      border: 1px solid #eaeaea;
+      margin: 0;
+      background: #fff;
+    }
+    li{
+      white-space:nowrap
+    }
+    a{
+      text-decoration: none;
+      color: #333;
+      font-size: 12px;
+      display: block;
+      padding: 5px 5px;
+      &:hover{
+        background: #eaeaea;
+      }
+    }
+
+  }
+  &:hover ul{
+    display: block;
   }
 }
 </style>

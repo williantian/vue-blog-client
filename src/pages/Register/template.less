@@ -1,0 +1,51 @@
+h1, h2 {
+    font-weight: normal;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: #42b983;
+  }
+  #register .el-button{
+    color: #149739;
+    border-color: #149739;
+    background: #fff;
+  }
+  #register .el-button:hover{
+    color: #fff;
+    background: #149739;
+  }
+  #register{
+    height: 100%;
+    display: grid;
+    grid:  1fr 12% / auto 60% auto;
+    justify-self: center;
+    
+    .form{
+      grid-row: 1;
+      grid-column: 2/span 1;
+      margin-top: 20px;
+
+      input{
+        width: 100%;
+      }
+      h4{
+        margin: 10px 0;
+      }
+      .el-button{
+        margin: 10px 0 0 0;
+        border-radius: 4px;
+      }
+    }
+    .notice{
+      grid-row: 2;
+      grid-column: 2/ span 1;
+      text-align: center;
+    }
+  }

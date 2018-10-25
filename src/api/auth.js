@@ -4,7 +4,7 @@ const URL = {
     REGISTER: '/auth/register',
     LOGIN: '/auth/login',
     LOGOUT: '/auth/logout',
-    GET_INFO: '.auth'
+    GET_INFO: '/auth'
 }
 
 export default {
