@@ -18,7 +18,7 @@
           这是内容哈哈哈哈哈哈哈哈哈哈哈哈
         </p>
         <div class="action">
-          <router-link to="/edit">编辑</router-link>
+          <router-link to="/edit/:blogId">编辑</router-link>
           <a href="#">删除</a>
         </div>
       </div>

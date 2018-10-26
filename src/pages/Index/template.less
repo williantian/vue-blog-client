@@ -1,0 +1,45 @@
+@import "../../assets/base.less";
+@import '../../assets/common.less';
+#index{
+  .item{
+    display: grid;
+    grid: auto auto / 80px 1fr;
+    
+    .avatar{
+      grid-column: 1;
+      grid-row: 1 / span2;
+      justify-self: center;
+      text-align: center;
+
+      img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      figcaption{
+        font-size: 12px;
+        color: @textLightColor;
+      }
+    }
+    h3{
+      grid-column: 2;
+      grid-row: 1;
+
+      &>span{
+        color: @textLightColor;
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+    p{
+      grid-column: 2;
+      grid-row: 2;
+      margin-top: 0;
+    }
+  }
+  .page{
+    display: grid;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}

@@ -9,8 +9,8 @@
         </div>
       </template>
       <template v-if="isLogin">
-        <h1>let's share</h1>
-        <i class="edit el-icon-edit"></i>
+        <h1><router-link to="/">let's share</router-link></h1>
+        <router-link to="/create"><i class="edit el-icon-plus"></i></router-link>
         <div class="user">
           <img class="avatar" v-bind:src="user.avatar" v-bind:alt="user.username" v-bind:title="user.username">
           <ul>
@@ -79,6 +79,7 @@ header.login{
   display: flex;
   align-items: center;
   background: @bgColor;
+  padding: 0 20px;
 
   h1{
     margin: 0;
@@ -87,6 +88,9 @@ header.login{
     font-size: 40px;
     text-transform: uppercase;
     flex: 1;
+    a{
+      color: #fff;
+    }
   }
   .edit{
     color: #fff;
@@ -113,7 +117,7 @@ header.login{
       background: #fff;
     }
     li{
-      white-space:nowrap
+     
     }
     a{
       text-decoration: none;
@@ -125,10 +129,10 @@ header.login{
         background: #eaeaea;
       }
     }
-
-  }
-  &:hover ul{
+    &:hover ul{
     display: block;
+    }
   }
+  
 }
 </style>
