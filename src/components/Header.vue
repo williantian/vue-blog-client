@@ -14,7 +14,7 @@
         <div class="user">
           <img class="avatar" v-bind:src="user.avatar" v-bind:alt="user.username" v-bind:title="user.username">
           <ul>
-            <li><router-link to="my">我的</router-link></li>
+            <li><router-link to="/my">我的</router-link></li>
             <li><a href="#" v-on:click = onLogout>注销</a></li>
           </ul>
         </div>

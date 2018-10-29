@@ -4,12 +4,12 @@ export default {
   data () {
     return {
       blogs: [],
-      total: 0 ,
+      total: 0   ,
       page: ''
     }
   },
   created(){
-    this.page = parseInt(this.$route.query.page) || ''
+    this.page = parseInt(this.$route.query.page) || 1 
     blog.getIndexBlogs({page: this.page}).then((res)=>{
       console.log(res)
       this.blogs = res.data

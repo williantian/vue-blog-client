@@ -1,11 +1,11 @@
 <template>
   <div id="detail">
     <section class="user-info">
-      <img class="avatar" src="https://secure.gravatar.com/avatar/ff4317f0f9be382a2bca6ac3aded778a?s=50&r=pg&d=https%3A%2F%2Fdeveloper.mozilla.org%2Fstatic%2Fimg%2Favatar.png">
-      <h3>jack</h3>
-      <p><router-link to="/user">个人信息</router-link> 发布于三天前</p>
+      <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username" >
+      <h3>{{title}}</h3>
+      <p><router-link :to="`/user/${user.id}`">{{user.username}}</router-link> 发布于{{friendlyDate(createdAt)}}</p>
     </section>
-    <section class="article"></section>
+    <section class="article" v-html="markdown"></section>
   </div>
 </template>
 

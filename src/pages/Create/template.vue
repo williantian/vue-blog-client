@@ -1,6 +1,6 @@
 <template>
   <div id="create">
-    <h1>创建博客</h1>
+    <h1>编辑博客</h1>
     <main>
       <h3>文章标题</h3>
       <el-input v-model="title"></el-input>

@@ -19,7 +19,7 @@ export default {
         return this.getBlogs({userId, page, atIndex})
     },
     getDetail({blogId}){
-        return  request(URL.GET_DETAIL,replace(':blogId', blogId))
+        return  request(URL.GET_DETAIL.replace(':blogId', blogId))
     },
     updateBlog({blogId},{title, content, description, atIndex}){
         return  request(URL.UPDATE.replace(':blogId',blogId), 'PATCH', {title, content,description,atIndex})
@@ -28,6 +28,6 @@ export default {
         return request(URL.CREATE, 'POST',{title, content, description,atIndex})
     },
     deleteBlog({blogId}){
-        return requuest(URL.DELETE.replace(':blogId', blogId), 'DELETE')
+        return request(URL.DELETE.replace(':blogId', blogId), 'DELETE')
     }
 }

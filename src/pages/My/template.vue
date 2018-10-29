@@ -1,41 +1,31 @@
 <template>
   <div id="my">
     <section class="user-info">
-      <img class="avatar" src="https://secure.gravatar.com/avatar/ff4317f0f9be382a2bca6ac3aded778a?s=50&r=pg&d=https%3A%2F%2Fdeveloper.mozilla.org%2Fstatic%2Fimg%2Favatar.png">
-      <h3>jack</h3>
+      <img class="avatar" :src="user.avatar" :alt="user.username">
+      <h3>{{user.username}}</h3>
     </section>
     <section>
-      <div class="item">
+      <router-link class="item" v-for="blog in blogs" :key="blog.id" :to="`/detail/${blog.id}`">
         <div class="date">
-          <span class="day">20</span>
-          <span class="month">5月</span>
-          <span class="year">2018</span>
+          <span class="day">{{splitDate(blog.createdAt).date}}</span>
+          <span class="month">{{splitDate(blog.createdAt).month}}月</span>
+          <span class="year">{{splitDate(blog.createdAt).year}}</span>
         </div>
-        <h3>这是标题</h3>
-        <p>这是内容哈哈哈哈哈哈哈哈哈哈哈哈
-          这是内容哈哈哈哈哈哈哈哈哈哈哈哈
-          这是内容哈哈哈哈哈哈哈哈哈哈哈哈
-          这是内容哈哈哈哈哈哈哈哈哈哈哈哈
-        </p>
+        <h3>{{blog.title}}</h3>
+        <p>{{blog.description}}</p>
         <div class="action">
-          <router-link to="/edit/:blogId">编辑</router-link>
-          <a href="#">删除</a>
+          <router-link :to="`/edit/${blog.id}`">编辑</router-link>
+          <a href="#" @click.prevent="onDelete(blog.id)">删除</a>
         </div>
-      </div>
-      <div class="item">
-        <div class="date">
-          <span class="day">20</span>
-          <span class="month">5月</span>
-          <span class="year">2018</span>
-        </div>
-        <h3>这是标题</h3>
-        <p>这是内容哈哈哈哈哈哈哈哈哈哈哈哈</p>
-        <div class="action">
-          <router-link to="/edit">编辑</router-link>
-          <a href="#">删除</a>
-        </div>
-      </div>
+      </router-link>
     </section>
+    <section class="page">
+        <el-pagination
+          layout="prev, pager, next"
+          :total="total" :current-page.sync="page"
+           @current-change="onPageChange">
+        </el-pagination>
+      </section>
   </div>
 </template>
 

@@ -10,9 +10,6 @@ export default {
     }
   },
   methods: {
-    on(){
-      console.log(1)
-    },
     onCreate(){
       blog.createBlog({title: this.title, description: this.description, content: this.content, atIndex: this.atIndex})
        .then((res)=>{
