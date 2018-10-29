@@ -1,4 +1,4 @@
-/*import blog from '../../api/blog';
+import blog from '../../api/blog';
 
 export default {
   data () {
@@ -18,4 +18,4 @@ export default {
         })
     }
   }
-}*/
+}

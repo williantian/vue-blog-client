@@ -1,7 +1,6 @@
 <template>
   <div id="edit">
     <h1>创建博客</h1>
-    <main>
       <h3>文章标题</h3>
       <el-input v-model="title"></el-input>
       <p class="msg">限30个字</p>
@@ -14,7 +13,6 @@
         <label>是否展示到首页</label>
         <el-switch v-model="atIndex" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
       </p>
-    </main>
     <el-button v-on:click="onEdit">确定</el-button>
   </div>
 </template>
