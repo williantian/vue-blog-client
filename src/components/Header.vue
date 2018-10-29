@@ -55,6 +55,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 @import "../assets/base.less";
+@import "../assets/common.less";
 header.no-login{
   padding: 0 12% 30px 12%;
   display: grid;
@@ -74,12 +75,35 @@ header.no-login{
   .buttons{
     margin-top: 30px;
   }
+  .el-button{
+    font-size: 13px;
+    color: #006600;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 16px;
+    border-radius: 2px;
+    font-weight: normal;
+    border: 1px solid #149739;
+    margin: 0 5px;
+  }
 }
 header.login{
   display: flex;
   align-items: center;
   background: @bgColor;
   padding: 0 20px;
+
+  .el-button{
+    font-size: 13px;
+    color: #006600;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 16px;
+    border-radius: 2px;
+    font-weight: normal;
+    border: 1px solid #149739;
+    margin: 0 5px;
+  }
 
   h1{
     margin: 0;
