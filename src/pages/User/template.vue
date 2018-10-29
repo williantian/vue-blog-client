@@ -1,5 +1,5 @@
 <template>
-  <div id="my">
+  <div id="user">
     <section class="user-info">
       <img class="avatar" :src="user.avatar" :alt="user.username">
       <h3>{{user.username}}</h3>
@@ -27,4 +27,4 @@
 
 <script src="./template.js"></script>
 
-<style lang="less" src="./template.less"></style>
+<style lang="less" src="../My/template.less"></style>

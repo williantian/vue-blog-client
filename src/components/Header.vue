@@ -54,73 +54,59 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-@import "../assets/base.less";
-@import "../assets/common.less";
-header.no-login{
+@import "../assets/base.less";  
+
+header.no-login {
   padding: 0 12% 30px 12%;
+  background: @bgColor;
   display: grid;
   justify-items: center;
-  background: @bgColor;
 
-  h1{
+  h1 {
     color: #fff;
     font-size: 40px;
     margin: 60px 0 0 0;
-    text-transform: uppercase;/*里面的文本都是大写*/
+    text-transform: uppercase;
   }
-  p{
+
+  p {
     margin: 15px 0 0 0;
     color: #fff;
   }
-  .buttons{
-    margin-top: 30px;
+  
+  .btns {
+    margin-top: 20px;
   }
-  .el-button{
-    font-size: 13px;
-    color: #006600;
-    height: 30px;
-    line-height: 28px;
-    padding: 0 16px;
-    border-radius: 2px;
-    font-weight: normal;
-    border: 1px solid #149739;
-    margin: 0 5px;
+
+  button {
+    margin: 20px 5px 0;
   }
-}
-header.login{
+} 
+
+
+header.login {
   display: flex;
   align-items: center;
   background: @bgColor;
-  padding: 0 20px;
 
-  .el-button{
-    font-size: 13px;
-    color: #006600;
-    height: 30px;
-    line-height: 28px;
-    padding: 0 16px;
-    border-radius: 2px;
-    font-weight: normal;
-    border: 1px solid #149739;
-    margin: 0 5px;
-  }
-
-  h1{
+  h1 {
     margin: 0;
     padding: 0;
-    color: #fff;
     font-size: 40px;
     text-transform: uppercase;
     flex: 1;
-    a{
+
+    a {
       color: #fff;
     }
   }
-  .edit{
+
+  .edit {
     color: #fff;
     font-size: 30px;
   }
-  .avatar{
+
+  .avatar {
     width: 40px;
     height: 40px;
     border: 1px solid #fff;
@@ -128,35 +114,36 @@ header.login{
     margin-left: 15px;
   }
 
-  .user{
+  .user {
     position: relative;
 
-    ul{
+    ul {
       display: none;
       position: absolute;
       right: 0;
       list-style: none;
       border: 1px solid #eaeaea;
-      margin: 0;
-      background: #fff;
-    }
-    li{
-     
-    }
-    a{
-      text-decoration: none;
-      color: #333;
-      font-size: 12px;
-      display: block;
-      padding: 5px 5px;
-      &:hover{
-        background: #eaeaea;
+      margin:0;
+      padding: 0;
+      background-color: #fff;
+
+      a {
+        text-decoration: none;
+        color: #333;
+        font-size: 12px;
+        display: block;
+        padding: 5px 10px;
+
+        &:hover {
+          background-color: #eaeaea;
+        }
       }
+
     }
-    &:hover ul{
-    display: block;
+
+    &:hover ul {
+      display: block;
     }
   }
-  
 }
 </style>

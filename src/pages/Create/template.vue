@@ -21,4 +21,4 @@
 
 <script src="./template.js"></script>
 
-<style lang="less" src="./template.less"></style>
+<style lang="less" src="../Edit/template.less"></style>

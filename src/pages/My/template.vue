@@ -1,7 +1,7 @@
 <template>
   <div id="my">
     <section class="user-info">
-      <img class="avatar" :src="user.avatar" :alt="user.username">
+      <img :src="user.avatar" :alt="user.username" class="avatar">
       <h3>{{user.username}}</h3>
     </section>
     <section>
@@ -13,19 +13,20 @@
         </div>
         <h3>{{blog.title}}</h3>
         <p>{{blog.description}}</p>
-        <div class="action">
+        <div class="actions">
           <router-link :to="`/edit/${blog.id}`">编辑</router-link>
           <a href="#" @click.prevent="onDelete(blog.id)">删除</a>
         </div>
       </router-link>
     </section>
-    <section class="page">
-        <el-pagination
-          layout="prev, pager, next"
-          :total="total" :current-page.sync="page"
-           @current-change="onPageChange">
-        </el-pagination>
-      </section>
+    <section class="pagination">
+      <el-pagination
+        layout="prev, pager, next"
+        :total="total"
+        :current-page="page"
+        @current-change="onPageChange">
+      </el-pagination>
+    </section>
   </div>
 </template>
 
